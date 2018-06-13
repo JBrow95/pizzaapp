@@ -44,3 +44,21 @@ while response > 0 do
 rpizza() 
 response -= 1
 end
+
+	puts "Would you like any of these extra Toppings? [Cheese] [Bacon] [Pepperoni] [Peppers]"
+
+	response = gets.chomp
+
+case response
+when "Cheese"
+	puts "Added extra Cheese"
+when "Bacon"
+	puts "Added extra Bacon"
+when "Pepperoni"
+	puts "Added extra Pepperoni"
+when "Peppers"
+	puts "Added extra Peppers"
+else
+	puts "Sorry we cant give you extra of that item!"
+end
+
