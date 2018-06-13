@@ -1,3 +1,5 @@
+puts "how many pizzas do you want?"
+
 	
 def rpizza()
 
@@ -34,4 +36,11 @@ end
 def fruits()
 	f = ["pineapple", "none"]
 	puts "Fruit Toppigss: #{f.sample}"
+end
+
+
+response = gets.chomp.to_i
+while response > 0 do 
+rpizza() 
+response -= 1
 end
