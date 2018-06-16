@@ -1,6 +1,7 @@
+
+
 puts "how many pizzas do you want?"
 
-	
 def rpizza()
 
 	puts "Here is a random pizza!"
@@ -38,27 +39,32 @@ def fruits()
 	puts "Fruit Toppigss: #{f.sample}"
 end
 
-
 response = gets.chomp.to_i
+
 while response > 0 do 
-rpizza() 
-response -= 1
+	rpizza() 
+	response -= 1
 end
 
-	puts "Would you like any of these extra Toppings? [Cheese] [Bacon] [Pepperoni] [Peppers]"
-
-	response = gets.chomp
-
-case response
-when "Cheese"
-	puts "Added extra Cheese"
-when "Bacon"
-	puts "Added extra Bacon"
-when "Pepperoni"
-	puts "Added extra Pepperoni"
-when "Peppers"
-	puts "Added extra Peppers"
-else
-	puts "Sorry we cant give you extra of that item!"
+class extra
+	def initialize( *extra_args )
+		@extra_args = extra_args
+	end
 end
 
+# puts "Would you like any of these extra Toppings? [cheese] [bacon] [pepperoni] [peppers]"
+
+# response = gets.chomp
+
+# case response.downcase
+# when "cheese"
+# 	puts "Added extra Cheese"
+# when "bacon"
+# 	puts "Added extra Bacon"
+# when "pepperoni"
+# 	puts "Added extra Pepperoni"
+# when "peppers"
+# 	puts "Added extra Peppers"
+# else
+# 	puts "Sorry we cant give you extra of that item!"
+# end
