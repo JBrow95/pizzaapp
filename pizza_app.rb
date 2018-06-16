@@ -46,25 +46,35 @@ while response > 0 do
 	response -= 1
 end
 
-class extra
+class Extra
+	attr_reader :none
 	def initialize( *extra_args )
 		@extra_args = extra_args
+		@none = @extra_args.length
+	end
+	def get_extra_choice
+		@extra_args.each_with_index do | item, index |
+			puts "#{index + 1}. #{item}"
+		end
+		puts "Enter your choice: "
+		user_choice = gets.to_i
+
+		return user_choice
 	end
 end
 
-# puts "Would you like any of these extra Toppings? [cheese] [bacon] [pepperoni] [peppers]"
+	extra = Extra.new(
+		"Cheese",
+		"Bacon",
+		"Onions",
+		"Pepperoni",
+		"Peppers",
+		"None"
+		)
 
-# response = gets.chomp
+choice = extra.get_extra_choice
+puts "Added extra #{choice}!"
 
-# case response.downcase
-# when "cheese"
-# 	puts "Added extra Cheese"
-# when "bacon"
-# 	puts "Added extra Bacon"
-# when "pepperoni"
-# 	puts "Added extra Pepperoni"
-# when "peppers"
-# 	puts "Added extra Peppers"
-# else
-# 	puts "Sorry we cant give you extra of that item!"
-# end
+while( (choice = extra.get_extra_choice) != extra.none)
+	puts "Added extra #{choice}!"
+end
