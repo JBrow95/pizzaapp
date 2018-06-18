@@ -66,20 +66,24 @@ end
 
 	response = gets.chomp
 	
+t_price = 0
+
 case response.downcase
 when "cheese"
+	t_price = t_price + 0.5
 	puts "Added extra Cheese"
 when "bacon"
+	t_price = t_price + 0.7
 	puts "Added extra Bacon"
 when "pepperoni"
+	t_price = t_price + 0.3
 	puts "Added extra Pepperoni"
 when "peppers"
+	t_price = t_price + 0.5
 	puts "Added extra Peppers"
 else
 	puts "Sorry we cant give you extra of that item!"
 end
-
-t_price = 1.49
 
 total_p = p_price + t_price
 
