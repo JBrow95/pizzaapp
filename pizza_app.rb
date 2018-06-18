@@ -1,12 +1,12 @@
-
+t_price = 0.00
 
 puts "how many pizzas do you want?"
 
 def rpizza()
-
+	p_price = [4.99,9.99,14.99]
 	puts "Here is a random pizza!"
 	puts "#{size}#{crust}#{meats}#{meats2}#{veggies}#{fruits}"
-	
+	puts "Your total price is $#{p_price.sample}"
 end
 
 def size()
@@ -41,40 +41,32 @@ end
 
 response = gets.chomp.to_i
 
+
 while response > 0 do 
 	rpizza() 
 	response -= 1
 end
+	
+	puts "Would you like any of these extra Toppings? [cheese] [bacon] [pepperoni] [peppers]"
 
-class Extra
-	attr_reader :none
-	def initialize( *extra_args )
-		@extra_args = extra_args
-		@none = @extra_args.length
-	end
-	def get_extra_choice
-		@extra_args.each_with_index do | item, index |
-			puts "#{index + 1}. #{item}"
-		end
-		puts "Enter your choice: "
-		user_choice = gets.to_i
+	response = gets.chomp
+	e_price = 1.49
 
-		return user_choice
-	end
+case response.downcase
+when "cheese"
+	puts "Added extra Cheese"
+	puts "Added $#{e_price} to your total."
+when "bacon"
+	puts "Added extra Bacon"
+	puts "Added $#{e_price} to your total."
+when "pepperoni"
+	puts "Added extra Pepperoni"
+	puts "Added $#{e_price} to your total."
+when "peppers"
+	puts "Added extra Peppers"
+	puts "Added $#{e_price} to your total."
+else
+	puts "Sorry we cant give you extra of that item!"
 end
 
-	extra = Extra.new(
-		"Cheese",
-		"Bacon",
-		"Onions",
-		"Pepperoni",
-		"Peppers",
-		"None"
-		)
-
-choice = extra.get_extra_choice
-puts "Added extra #{choice}!"
-
-while( (choice = extra.get_extra_choice) != extra.none)
-	puts "Added extra #{choice}!"
-end
+	
