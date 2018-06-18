@@ -1,17 +1,9 @@
-t_price = 0.00
 
 puts "how many pizzas do you want?"
 
 def rpizza()
-	p_price = [4.99,9.99,14.99]
 	puts "Here is a random pizza!"
-	puts "#{size}#{crust}#{meats}#{meats2}#{veggies}#{fruits}"
-	puts "Your total price is $#{p_price.sample}"
-end
-
-def size()
-	size = ["small", "medium", "large"]
-	puts "Size: #{size.sample}"
+	puts "#{crust}#{meats}#{meats2}#{veggies}#{fruits}"
 end
 
 def crust()
@@ -47,26 +39,47 @@ while response > 0 do
 	response -= 1
 end
 	
+
+p_price = 0.00
+
+psize = ["small","medium","large"]
+
+	puts "Choose size #{psize}"
+	response = gets.chomp
+	
+	if response == "small"
+		sprice = 4.99
+		p_price = p_price + sprice
+	elsif response == "medium"
+		sprice = 9.99
+		p_price = p_price + sprice
+	elsif response == "large"
+		sprice = 14.99
+		p_price = p_price + sprice
+	else
+		sprice = 0.00
+	end
+
+
 	puts "Would you like any of these extra Toppings? [cheese] [bacon] [pepperoni] [peppers]"
 
 	response = gets.chomp
-	e_price = 1.49
-
+	
 case response.downcase
 when "cheese"
 	puts "Added extra Cheese"
-	puts "Added $#{e_price} to your total."
 when "bacon"
 	puts "Added extra Bacon"
-	puts "Added $#{e_price} to your total."
 when "pepperoni"
 	puts "Added extra Pepperoni"
-	puts "Added $#{e_price} to your total."
 when "peppers"
 	puts "Added extra Peppers"
-	puts "Added $#{e_price} to your total."
 else
 	puts "Sorry we cant give you extra of that item!"
 end
 
-	
+t_price = 1.49
+
+total_p = p_price + t_price
+
+puts "Your total price is $#{total_p}"
