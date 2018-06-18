@@ -1,6 +1,3 @@
-
-puts "how many pizzas do you want?"
-
 def rpizza()
 	puts "Here is a random pizza!"
 	puts "#{crust}#{meats}#{meats2}#{veggies}#{fruits}"
@@ -31,34 +28,38 @@ def fruits()
 	puts "Fruit Toppigss: #{f.sample}"
 end
 
-response = gets.chomp.to_i
-
-
-while response > 0 do 
-	rpizza() 
-	response -= 1
-end
-	
+	puts "how many pizzas do you want?"
+	response = gets.chomp.to_i
 
 p_price = 0.00
+while response > 0 do 
 
-psize = ["small","medium","large"]
+	psize = ["small","medium","large"]
 
 	puts "Choose size #{psize}"
-	response = gets.chomp
+	response2 = gets.chomp
 	
-	if response == "small"
+	if response2 == "small"
 		sprice = 4.99
 		p_price = p_price + sprice
-	elsif response == "medium"
+	elsif response2 == "medium"
 		sprice = 9.99
 		p_price = p_price + sprice
-	elsif response == "large"
+	elsif response2 == "large"
 		sprice = 14.99
 		p_price = p_price + sprice
 	else
 		sprice = 0.00
 	end
+
+	rpizza() 
+	response -= 1
+end
+	
+def rpizza()
+	puts "Here is a random pizza!"
+	puts "#{crust}#{meats}#{meats2}#{veggies}#{fruits}"
+end
 
 
 	puts "Would you like any of these extra Toppings? [cheese] [bacon] [pepperoni] [peppers]"
