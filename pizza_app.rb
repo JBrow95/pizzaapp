@@ -1,3 +1,4 @@
+
 def rpizza()
 	puts "Here is a random pizza!"
 	puts "#{crust}#{meats}#{meats2}#{veggies}#{fruits}"
@@ -70,21 +71,36 @@ t_price = 0
 
 case response.downcase
 when "cheese"
-	t_price = t_price + 0.5
+	t_price = t_price + 0.49
 	puts "Added extra Cheese"
 when "bacon"
-	t_price = t_price + 0.7
+	t_price = t_price + 0.69
 	puts "Added extra Bacon"
 when "pepperoni"
-	t_price = t_price + 0.3
+	t_price = t_price + 0.39
 	puts "Added extra Pepperoni"
 when "peppers"
-	t_price = t_price + 0.5
+	t_price = t_price + 0.59
 	puts "Added extra Peppers"
 else
 	puts "Sorry we cant give you extra of that item!"
 end
 
-total_p = p_price + t_price
+	total_p = p_price + t_price
 
-puts "Your total price is $#{total_p}"
+	puts "Would you like Delivery? (y/n)?"
+		ans = gets.chomp
+
+	d_charge = 2.99
+
+	t_d_charge = total_p + d_charge
+
+
+	if ans == "y"
+		puts "On its Way!"
+		puts "Your total is $#{t_d_charge}"
+	elsif ans == "n"
+		puts "Your total is $#{total_p}"
+	else
+		puts "Error please reorder"
+	end
