@@ -32,7 +32,7 @@ end
 	puts "how many pizzas do you want?"
 	response = gets.chomp.to_i
 
-p_price = 0.00
+p_price = 0.0
 while response > 0 do 
 
 	psize = ["small","medium","large"]
@@ -50,7 +50,7 @@ while response > 0 do
 		sprice = 14.99
 		p_price = p_price + sprice
 	else
-		sprice = 0.00
+		sprice = 0.0
 	end
 
 	rpizza() 
@@ -67,7 +67,7 @@ end
 
 	response = gets.chomp
 	
-t_price = 0
+t_price = 0.0
 
 case response.downcase
 when "cheese"
@@ -85,22 +85,24 @@ when "peppers"
 else
 	puts "Sorry we cant give you extra of that item!"
 end
+	
+	
 
-	total_p = p_price + t_price
+	total_p = p_price + t_price * 1.06
 
 	puts "Would you like Delivery? (y/n)?"
 		ans = gets.chomp
 
 	d_charge = 2.99
+	
 
-	t_d_charge = total_p + d_charge
-
+	t_d_charge = total_p + d_charge * 1.06
 
 	if ans == "y"
 		puts "On its Way!"
-		puts "Your total is $#{t_d_charge}"
+		puts "Your total is $#{t_d_charge.round(2)}"
 	elsif ans == "n"
-		puts "Your total is $#{total_p}"
+		puts "Your total is $#{total_p.round(2)}"
 	else
 		puts "Error please reorder"
 	end
